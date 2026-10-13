@@ -10,6 +10,23 @@ import pandas as pd
 from scipy.stats import pearsonr
 
 
+_COLUMN_ALIASES = {
+    "SepalLengthCm": "Sepal Length",
+    "PetalLengthCm": "Petal Length",
+    "PetalWidthCm": "Petal Width",
+}
+
+
+def _canonicalize_iris_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Accept both the practical's spaced headers and standard Iris headers."""
+    rename = {
+        source: target
+        for source, target in _COLUMN_ALIASES.items()
+        if source in df.columns and target not in df.columns
+    }
+    return df.rename(columns=rename).copy()
+
+
 def load_and_clean_telemetry(csv_path: str | Path) -> tuple[pd.DataFrame, pd.Series]:
     """Load CSV, replace the practical's abnormal markers, and count nulls.
 
@@ -26,6 +43,7 @@ def load_and_clean_telemetry(csv_path: str | Path) -> tuple[pd.DataFrame, pd.Ser
 
 def impute_missing_telemetry(df: pd.DataFrame) -> pd.DataFrame:
     """Fill Petal Width with its mean and Sepal Length with its mode."""
+    df = _canonicalize_iris_columns(df)
     required = {"Petal Width", "Sepal Length"}
     missing = required - set(df.columns)
     if missing:
@@ -47,6 +65,7 @@ def impute_missing_telemetry(df: pd.DataFrame) -> pd.DataFrame:
 
 def engineer_features(df: pd.DataFrame) -> tuple[pd.DataFrame, Any, pd.DataFrame]:
     """Add Petal_Area and return (frame, highest-mean species, top 5 rows)."""
+    df = _canonicalize_iris_columns(df)
     required = {"Petal Length", "Petal Width"}
     missing = required - set(df.columns)
     if missing:
