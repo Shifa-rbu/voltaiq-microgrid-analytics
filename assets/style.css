@@ -69,3 +69,23 @@ code, pre { color: var(--text); background: var(--surface-secondary); border: 1p
 .vq-dot { width:7px; height:7px; border-radius:50%; background:var(--forest); display:inline-block; }
 .vq-note { background:var(--surface); border:1px solid var(--border-strong); border-left:3px solid var(--teal); padding:12px 15px; border-radius:6px; color:var(--muted); font-size:13px; box-shadow:0 1px 4px rgba(20,37,61,.04); }
 .vq-footer { color:var(--muted); border-top:1px solid var(--border-strong); padding-top:12px; font-size:11px; margin-top:28px; }
+
+/* Public-data scraping notice */
+.vq-scrape-guidance { margin: 8px 0 18px; padding: 12px 15px; border: 1px solid #C7D6E6; border-left: 3px solid #52647A; border-radius: 6px; background: #F0F4F8; color: #40536A; font-size: 13px; line-height: 1.55; }
+
+/* VoltaIQ campus-energy workflow components */
+.energy-welcome { padding: 26px 28px; margin: 16px 0 24px; border: 1px solid #BBC8D8; border-left: 4px solid #234477; border-radius: 7px; background: #FFFFFF; }
+.energy-welcome-kicker { color: #234477; font-size: 10px; font-weight: 700; letter-spacing: .13em; }
+.energy-welcome h3 { margin: 8px 0 6px; color: #101B2D; font-size: 22px; letter-spacing: -.02em; }
+.energy-welcome p { max-width: 760px; margin: 0; color: #4B5D73; font-size: 14px; line-height: 1.6; }
+.energy-step { min-height: 120px; padding: 16px; border: 1px solid #D4DDE8; border-radius: 6px; background: #FFFFFF; }
+.energy-step > span { display: block; margin-bottom: 12px; color: #26756D; font-family: ui-monospace, monospace; font-size: 11px; font-weight: 700; }
+.energy-step strong { display: block; margin-bottom: 7px; color: #101B2D; font-size: 14px; }
+.energy-step p { margin: 0; color: #4B5D73; font-size: 12px; line-height: 1.55; }
+.energy-schema { margin: 8px 0 15px; padding: 12px 15px; border: 1px solid #C7D6E6; border-radius: 6px; background: #F0F4F8; color: #40536A; font-size: 13px; line-height: 1.55; }
+.energy-lab-note { margin: 8px 0 18px; padding: 12px 15px; border: 1px solid #E2D4B5; border-left: 3px solid #946100; border-radius: 6px; background: #FAF6ED; color: #6C5426; font-size: 13px; line-height: 1.55; }
+.energy-bill { display:flex; align-items:center; justify-content:space-between; gap:16px; margin: 16px 0; padding: 17px 20px; border:1px solid #9EAFCA; border-left:4px solid #234477; border-radius:7px; background:#EEF3F9; }
+.energy-bill div { display:flex; flex-direction:column; gap:5px; }
+.energy-bill span { color:#234477; font-size:10px; font-weight:750; letter-spacing:.1em; }
+.energy-bill small { color:#4B5D73; font-size:11px; }
+.energy-bill > strong { color:#19365F; font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:24px; font-weight:750; font-variant-numeric:tabular-nums; white-space:nowrap; }
